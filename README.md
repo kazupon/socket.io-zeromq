@@ -1,5 +1,10 @@
 # socket.io-zeromq
 
+[![NPM version](https://badge.fury.io/js/socket.io-zeromq.svg)](http://badge.fury.io/js/socket.io-zeromq)
+[![Build Status](https://travis-ci.org/kazupon/socket.io-zeromq.svg?branch=master)](https://travis-ci.org/kazupon/socket.io-zeromq)
+[![Coverage Status](https://img.shields.io/coveralls/kazupon/socket.io-zeromq.svg)](https://coveralls.io/r/kazupon/socket.io-zeromq)
+[![Dependency Status](https://david-dm.org/kazupon/socket.io-zeromq.svg)](https://david-dm.org/kazupon/socket.io-zeromq)
+
 socket.io adapter [zeromq](http://zeromq.org/) implementation.
 
 
@@ -8,6 +13,8 @@ socket.io adapter [zeromq](http://zeromq.org/) implementation.
 ```
 $ npm install socket.io-zeromq
 ```
+
+zeromq version required >= 4.0.4
 
 
 # Usage
