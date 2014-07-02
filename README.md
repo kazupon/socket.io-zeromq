@@ -14,15 +14,50 @@ socket.io adapter [zeromq](http://zeromq.org/) implementation.
 $ npm install socket.io-zeromq
 ```
 
-zeromq version required >= 4.0.4
+required the following:
+
+- zeromq >= 4.0.4
+- [socket.io-zeromq-server](https://github.com/kazupon/socket.io-zeromq-server)
 
 
 # Usage
 
-TODO:
+```js
+var io = require('socket.io')(3000);
+var zmq = require('socket.io-zeromq');
+io.adapter(zmq({
+  host: '127.0.0.1',
+  pubPort: 5555,
+  subPort: 5556
+}));
+```
+
+
+# API
+
+## adapter(opts)
+
+The following options are allowed:
+
+- `key`: the name of the key to pub/sub events on as prefix (`socket.io-zmq`)
+- `host`: host to connect to zeromq pub/sub server on (`127.0.0.1`)
+- `pubPort`: port to connect to publisher of zeromq pub/sub server on (`5555`)
+- `subPort`: port to connect to subscriber of zeromq pub/sub server on (`5556`)
+- `pubClient`: optional, the zeromq client to publish events on
+- `subClient`: optional, the zeromq client to subscribe to events on
+
+If you decide to supply `pubClient` and `subClient`, make sure you use [node-zeromq](https://github.com/JustinTulloss/zeromq.node) as a client or one with an equivalent API.
 
 
 # Testing
+
+First, run the socket.io zeromq server
+
+```shell
+$ socket.io-zeromq-server
+```
+
+after that, run the test.
 
 ```shell
 $ make test
